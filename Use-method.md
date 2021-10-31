@@ -1,9 +1,4 @@
 下面提供一种简单可行的方法让字幕显示地更好，希望可以帮助到一部分同学。
-<br>
-
-简单来说，进入到你需要下载的文件目录下，复制当前网址，然后粘贴到 [这个下载工具](http://zhoudaxiaa.gitee.io/downgit/#/home)，即可直接下载。
-
-比如说我想下载 [郭彦甫MATLAB课程](./MATLAB-Base-YanfuKuo/) 的课件，
 
 1. **查找新扩展软件**
    <img src="./images/find_file.png" alt="进入需要下载的文件目录下" style="zoom: 67%;" />
