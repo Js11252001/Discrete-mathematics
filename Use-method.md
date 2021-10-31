@@ -5,4 +5,4 @@
 2. **在搜索框中搜索YouTube的这个插件，在插件页面有插件的详细介绍，按照介绍使用即可**
    <img src="./step2.png" alt="在搜索框中搜索YouTube的这个插件" style="zoom: 80%;" />
 3. **显示效果如下**
-   <img src="./step2.png" alt="在搜索框中搜索YouTube的这个插件" style="zoom: 80%;" />
+   <img src="./preview.png" alt="显示效果" style="zoom: 80%;" />
