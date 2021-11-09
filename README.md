@@ -24,6 +24,12 @@ Machine Translation of English Courses
 + :tv: [视频](https://youtu.be/p73UlRAu4NM)
 ### lesson 10
 + :tv: [视频](https://youtu.be/esZ66jksVuk)
+### lesson 11
++ :tv: [视频](https://youtu.be/_i469ueozjY)
+### lesson 12
++ :tv: [视频](https://youtu.be/KOM0L00Z1fw)
+### lesson 13
++ :tv: [视频](https://youtu.be/Hf81vpVafF4)
 
 
 正常情况下视频都不会出啥意外，放心看就好了。挂了就来这个页面看看吧，如果没有及时更新可以qq私信我。祝各位 学有所成！:v:
