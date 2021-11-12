@@ -6,6 +6,7 @@ Machine Translation of English Courses
 :speak_no_evil: Youtube的翻译功能实际上使用效果并不好，请看 [字幕食用教程](./Use-method.md)。
 ### lesson1
 + :tv: [视频](https://youtu.be/Tlc4BMtBPdE)
++ :notebook:
 ### lesson2
 + :tv: [视频](https://youtu.be/C1y5fkoxFsM)
 ### lesson3
