@@ -9,6 +9,7 @@ Machine Translation of English Courses
 + :notebook: [笔记](离散数学/lesson1/lesson1.html)
 ### lesson2
 + :tv: [视频](https://youtu.be/C1y5fkoxFsM)
++ 📓[笔记](离散数学/lesson2/lesson2.html)
 ### lesson3
 + :tv: [视频](https://youtu.be/HS6b8hzpzyo) 
 ### lesson4
