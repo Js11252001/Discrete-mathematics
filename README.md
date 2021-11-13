@@ -18,7 +18,7 @@ Machine Translation of English Courses
 ### lesson5
 + 📺 [视频](https://youtu.be/OJ4qSkZC1n4)
 ### lesson 6
-有一些问题。。
++ 📺 [视频](https://youtu.be/gBhsB6sJXgc)
 ### lesson 7
 + 📺 [视频](https://youtu.be/WeDpILD_sL4)
 ### lesson8
