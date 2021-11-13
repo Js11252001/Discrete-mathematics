@@ -4,6 +4,7 @@ Machine Translation of English Courses
 全英文授课的难度可想而知，因此我打算录制并上传YouTube从而翻译。
 
 🙊 Youtube的翻译功能实际上使用效果并不好，请看 [字幕食用教程](./Use-method.md)。
+
 ### lesson1
 + 📺 [视频](https://youtu.be/Tlc4BMtBPdE)
 + 📓 [笔记](离散数学/lesson1/lesson1.html)
