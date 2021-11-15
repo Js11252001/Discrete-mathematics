@@ -36,6 +36,6 @@ Machine Translation of English Courses
 + 📺 [视频](https://youtu.be/Hf81vpVafF4)
 
 ### other note
-+ 📓 [笔记]()
++ 📓 [笔记](离散数学/note cont/hash_function.html)
 
 正常情况下视频都不会出啥意外，放心看就好了。挂了就来这个页面看看吧，如果没有及时更新可以qq私信我。祝各位 学有所成！:)
