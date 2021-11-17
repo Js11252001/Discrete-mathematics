@@ -22,6 +22,7 @@ Machine Translation of English Courses
 + 📓[笔记](离散数学/lesson5/lesson5.html)
 ### lesson 6
 + 📺 [视频](https://youtu.be/gBhsB6sJXgc)
++ 📓[笔记](离散数学/lesson6/lesson6.html)
 ### lesson 7
 + 📺 [视频](https://youtu.be/WeDpILD_sL4)
 ### lesson8
