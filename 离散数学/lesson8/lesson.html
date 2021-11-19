@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="整除性 辗转相除 整除及其性质 定义5.1.1 ：设a和b是任意整数，若存在整数c，使得a=bc，则称a是b的倍数，b是a的因数。或者称a被b整除，而b整除a。记为b|a。 注意： （1）任意整数整除" />
+    <meta property="og:description" content="整除性 辗转相除 整除及其性质 定义5.1.1 ：设a和b是任意整数，若存在整数c，使得a=bc，则称a是b的倍数，b是a的因数。或者称a被b整除，而b整除a。记为b|a。 注意： （1）任意整数整除" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>离散数学（数论基础） - gonghr - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=qEXcq__L0Fr_0fygon-5YWr6Pug6YpDmiB0Tp6SG3tI" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/gonghr/custom.css?v=hxS4yoF3M&#x2B;cOy7&#x2B;sEzhZ&#x2B;ENyJX4=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=2VbkWg7qVDEmVox7Xye5yhnLuJ-l_3cc3gD-3KdbOgk" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/gonghr/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/gonghr/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/gonghr/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 663829;
+        var currentBlogApp = 'gonghr';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'Custom';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+    </script>
+        <script>
+            var currentPostDateAdded = '2021-06-24 05:18';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=u9APPNMQuyA6n-msmz2ghuRVnJF4p3dt6RDRW4VrDLI"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;v=20200504"></script>
+    
+    <script type="text/javascript">
+        window.codeHighlightEngine = 1
+        window.enableCodeLineNumber = false
+        window.codeHighlightTheme = 'cnblogs'
+    </script>
+</head>
+<body class="skin-custom no-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <!-- <div id="loading"><div class="loader-inner"></div></div> -->
+<div id="loading">
+    <div class="spinner-box">
+        <div class="blue-orbit leo"></div>
+        <div class="green-orbit leo"></div>
+        <div class="red-orbit leo"></div>
+        <div class="white-orbit w1 leo"></div>
+        <div class="white-orbit w2 leo"></div>
+        <div class="white-orbit w3 leo"></div>
+    </div>
+</div>
+
+
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/gonghr/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/gonghr/">GHR</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/gonghr/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/gonghr">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/gonghr/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/gonghr/p/14927783.html">
+    <span>离散数学（数论基础）</span>
+    
+
+
+
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+<h1 id="整除性-辗转相除">整除性 辗转相除</h1>
+<font size="4">
+<h2 id="整除及其性质">整除及其性质</h2>
+<p><strong>定义5.1.1</strong>  ：设a和b是任意整数，若存在整数c，使得a=bc，则称a是b的倍数，b是a的因数。或者称a被b整除，而b整除a。记为b|a。</p>
+<p>注意：</p>
+<p>（1）任意整数整除0 ，特别0|0； 0=b·0；(c=0)    0=0·c(c可以是任意整数)，但0不能整除任意非零整数。a=0·c(a≠0)</p>
+<p>（2）1和（-1）整除任意整数。 a=1·a；a=(-1)·(-a)</p>
+<p><strong>推论</strong>：b|a，(b<span class="math inline">\(\ne\)</span> 0) 当且仅当a被b除（或者a除以b,或者b除a）的余数为0。</p>
+<p><strong>整除的基本性质</strong></p>
+<p>性质1  若a|b，b|c，则a|c （传递性）</p>
+<p>性质2  若a|b，则a|bc  （b|bc用传递性证明)</p>
+<p>性质3  若a|b，a|c，则a|b<span class="math inline">\(\pm\)</span>c。</p>
+<p>性质4  若a整除b1,…,bn, 则a| <span class="math inline">\(\mathrm{\lambda}_1\mathrm{b}_1\)</span>+…+ <span class="math inline">\(\mathrm{\lambda}_n\mathrm{b}_n\)</span>，其中<span class="math inline">\(\mathrm{\lambda}_{\mathrm{i}}\)</span>为任意整数。</p>
+<p>性质5  若在一等式中，除某项外，其余各项都是a的倍数，则此项也是a的倍数</p>
+<p>性质6  若a|b，b|a，则b=<span class="math inline">\(\pm\)</span>a</p>
+<p>性质7  设a=qb+c，则a，b的公因数与b，c的公因数是完全相同的</p>
+<p><strong>定义5.1.2</strong></p>
+<p>若d是a的因数也是b的因数，则称d为a，b的<strong>公因数</strong>。<br>
+若d是a，b的公因数，而a，b的任意公因数整除d，则称d为a，b的<strong>最高公因数</strong>。a，b的最高公因数通常记为d=(a,b)。</p>
+<p><strong>例</strong>：8，12有公因数：±1, ±2, ±4, 其中， ±1|4, ±2|4, ±4|4，<font color="red">(注意正负）</font>则4是8和12的最高公因数，记为4=(8, 12)。-4也是</p>
+<p><strong>问题</strong>：0和0的最高公因数是多少？	【答】：0</p>
+<h3 id="512--辗转相除">5.1.2  辗转相除</h3>
+<p><strong>定理5.1.2</strong> ：任意二整数a，b有最高公因数。</p>
+<p><strong>定理5.1.3</strong>：任意二整数a，b的最高公因数d可以表示为a，b的倍数和，即表为下面的形式：d=sa+tb 其中 s，t都是整数。</p>
+<p><strong>辗转相除法求最高公因式</strong>：</p>
+<p>使用辗转相除法求两个数a，b的最高公因数并表示为它们的倍数和，需要使用的主要公式如下：</p>
+<p></p><div class="math display">\[\mathrm{S}_0=0,\mathrm{S}_1=1,\mathrm{T}_0=1,\mathrm{T}_1=\mathrm{q}_1
+\\
+\mathrm{S}_{\mathrm{k}}=\mathrm{q}_{\mathrm{k}}\mathrm{S}_{\mathrm{k}-1}+\mathrm{S}_{\mathrm{k}-2}
+\\
+\mathrm{T}_{\mathrm{k}}=\mathrm{q}_{\mathrm{k}}\mathrm{T}_{\mathrm{k}-1}+\mathrm{T}_{\mathrm{k}-2}
+\\
+\mathrm{d}=\left( -1 \right) ^{\mathrm{n}-1}\mathrm{S}_{\mathrm{n}}\mathrm{a}+\left( -1 \right) ^{\mathrm{n}}\mathrm{T}_{\mathrm{n}}\mathrm{b}
+\]</div><p></p><img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624170443327-1597529561.jpg" width="700px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624170512437-258022349.jpg" width="700px">
+<h1 id="互质-质因数分解">互质 质因数分解</h1>
+<h2 id="整数互质">整数互质</h2>
+<p><strong>定义5.2.1</strong> ： 若a，b除±1外无其它公因数，则称a和b互质。</p>
+<p><strong>结论：</strong></p>
+<p>1、a和b互质，必要而且只要a、b的最高公因数为1(通常只考虑+1)。</p>
+<p>2、±1和任意整数(包括0)互质。</p>
+<p><strong>定理5.2.1</strong> ：a和b互质，当且仅当1可表示为a和b的倍数和形式，即存在整数s和t使1=sa+tb。</p>
+<p><strong>定理5.2.2</strong>：若a和b互质，而a|bc，则a|c。</p>
+<p><strong>定理5.2.3</strong>：若b和a1，a2，…，an都互质，则b和a1a2…an互质。</p>
+<p><strong>定理5.2.4</strong>：若m1，m2，…，mk两两互质而都整除a，则m1m2…mk|a。</p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624170534645-340127978.jpg" width="700px">
+<p><strong>常用结论</strong>：<span class="math inline">\(2^{\mathrm{p}}\)</span>-1和<span class="math inline">\(2^{\mathrm{q}}\)</span>-1互质的充要条件是p和q互质。</p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624170559399-1270779512.jpg" style="zoom: 70%">
+<h2 id="质数与合数-算术基本定理">质数与合数 算术基本定理</h2>
+<p><strong>定义5.2.2</strong>：一个正整数，如果不等于1而且除了自己和1没有其它正因数，则称其为一个质数(也称为素数)；否则称其为合数。<br>
+这样，正整数分为{1, 质数，合数}</p>
+<p><strong>结论</strong>：</p>
+<p>1、质数p和a互质，必要而且只要p <span class="math inline">\(\nmid\)</span> a</p>
+<p>2、任意两个不同的质数互质</p>
+<p><strong>定理5.2.5</strong> ：设p为质数，若p整除a1a2…an，则p整除a1，a2，…，an之一。</p>
+<p><strong>定理5.2.6 (算术基本定理)</strong>：任意正整数n（n<span class="math inline">\(\ne\)</span> 1）恰有一法写成质数的乘积（不计因数乘积的顺序）。</p>
+<p><strong>推论1</strong>：  任意整数(<span class="math inline">\(\ne\)</span> 0，<span class="math inline">\(\ne\)</span> ±1)恰好有一法写成下面的形式：±<span class="math inline">\(\mathrm{p}_1\)</span>…<span class="math inline">\(\mathrm{p}_k\)</span>，其中<span class="math inline">\(\mathrm{p}_1\)</span>,…,<span class="math inline">\(\mathrm{p}_k\)</span>都是质数。</p>
+<p><strong>推论2</strong>：  任意整数(<span class="math inline">\(\ne\)</span> 0，<span class="math inline">\(\ne\)</span> ±1)恰好有一法写成下面的形式：±<span class="math inline">\({\mathrm{p}_1}^{\mathrm{r}_1}\)</span>…<span class="math inline">\({\mathrm{p}_n}^{\mathrm{r}_n}\)</span>，其中<span class="math inline">\(\mathrm{p}_1\)</span>,…,<span class="math inline">\(\mathrm{p}_n\)</span>是不同的质数，<span class="math inline">\(\mathrm{r}_1\)</span>,…,<span class="math inline">\(\mathrm{r}_n\)</span>是正整数。</p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624170801437-949452147.jpg" width="700px">
+<p><strong>定理5.2.7</strong>：质数无穷多。</p>
+<h1 id="合同---一次同余式">合同   一次同余式</h1>
+<h2 id="合同及其性质">合同及其性质</h2>
+<p><strong>定义</strong>. 设a,b为二整数，m是任意非0整数。若 m|a-b，则称a合同于b 模m。记为：a<span class="math inline">\(\equiv\)</span>b(mod m)</p>
+<p><strong>注意</strong>：</p>
+<p>（1）合同为整除的另一种表示法，故整除的性质在此可用。特别地，若b=0，则a$\equiv$0(mod m)表示的就是m|a。</p>
+<p>（2）若m|a，则- m|a。所以，若未指定m而一般地讨论模m合同时，总假定m是正整数。</p>
+<p>（3）a<span class="math inline">\(\equiv\)</span>b(mod m) iff 以m除a和b所得的余数相同</p>
+<p><strong>合同的基本性质</strong>：</p>
+<p><strong>性质1</strong>：  a<span class="math inline">\(\equiv\)</span>a。<br>
+<strong>性质2</strong>：  若a<span class="math inline">\(\equiv\)</span>b,则b<span class="math inline">\(\equiv\)</span>a。<br>
+<strong>性质3</strong>： 若a<span class="math inline">\(\equiv\)</span>b，b<span class="math inline">\(\equiv\)</span>c，则a<span class="math inline">\(\equiv\)</span>c。<br>
+故合同是一种<strong>等价关系</strong>。<br>
+每一个<strong>等价类</strong>称为模m的一个<strong>剩余类</strong>。</p>
+<p><strong>性质4</strong>：  若a<span class="math inline">\(\equiv\)</span>b(mod m),c<span class="math inline">\(\equiv\)</span>d(mod m)，则a<span class="math inline">\(\pm\)</span>c<span class="math inline">\(\equiv\)</span>b<span class="math inline">\(\pm\)</span>d(mod m)，ac<span class="math inline">\(\equiv\)</span>bd(mod m)</p>
+<p><strong>性质5</strong>：  若a<span class="math inline">\(\equiv\)</span>b(mod m)，则a<span class="math inline">\(\pm\)</span>k<span class="math inline">\(\equiv\)</span>b<span class="math inline">\(\pm\)</span>k (mod m)。其中k为整数。</p>
+<p><strong>性质6</strong>：  若a+b<span class="math inline">\(\equiv\)</span>c(mod m)，则a<span class="math inline">\(\equiv\)</span>c-b(mod m)。</p>
+<p><strong>性质7</strong>：  若a<span class="math inline">\(\equiv\)</span>b(mod m)，则ac<span class="math inline">\(\equiv\)</span>bc(mod m)。</p>
+<p><strong>性质8</strong>：  若a<span class="math inline">\(\equiv\)</span>b(mod m)，则<span class="math inline">\(\\\mathrm{a}^{\mathrm{n}}\equiv \mathrm{b}^{\mathrm{n}}\)</span>(mod m)， n$\geqslant $0</p>
+<p><strong>性质9</strong>：  若c<span class="math inline">\(\ne\)</span> 0而ac<span class="math inline">\(\equiv\)</span> bc(mod mc)，则a<span class="math inline">\(\equiv\)</span> b(mod m)。</p>
+<p><strong>性质10</strong>：  若c和m互质，则由ac<span class="math inline">\(\equiv\)</span>bc(mod m)可以推出a<span class="math inline">\(\equiv\)</span>b(mod m)。</p>
+<p><strong>性质11</strong>： 若ac<span class="math inline">\(\equiv\)</span>bc(mod m)，且（c, m）=d，   则a<span class="math inline">\(\equiv\)</span>b(mod m/d)</p>
+<p>其实性质9和10是都性质11的特例，因为性质9里(c,m)=d=c，性质10里(c,m)=d=1</p>
+<p><strong>结论</strong>：若(c,m)=d,则(c/d , m/d)=1</p>
+<p>对于质数模p(即模p为质数，如mod 3)，则有与相等完全类似的消去律。</p>
+<p><strong>性质12</strong>： 若p为质数，c<span class="math inline">\(\not \equiv\)</span> 0(mod p)，（c,p互质），而ac<span class="math inline">\(\equiv\)</span> bc(mod p)，则a<span class="math inline">\(\equiv\)</span> b(mod p)。</p>
+<p><strong>性质13</strong>： 设p(x)是整系数多项式，x和y是整数变量，则由x<span class="math inline">\(\equiv\)</span>y(mod m)可得p(x) <span class="math inline">\(\equiv\)</span>p(y) (mod m)。</p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624170837690-2110524722.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624170841703-540653002.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624170846199-1688240815.jpg" width="600px">
+<h2 id="剩余类-一次同余式">剩余类 一次同余式</h2>
+<p><strong>等价类、剩余类</strong>：模m合同既然是一种等价关系，就可以把所有整数按照模 m合同的关系分为<strong>等价类</strong>，每一个等价类称为模m的一个<strong>剩余类</strong>。</p>
+<p>例如，整数集合Z，模3，得到：<br>
+余数为0: {…, -6, -3, 0, 3, 6, …}<br>
+余数为1: {…, -5, -2, 1, 4, 7, …}<br>
+余数为2: {…, -4, -1, 2, 5, 8, …}</p>
+<p>1、同一个剩余类中的数互相合同，不同的剩余类中的数不互相合同。</p>
+<p>2、因为以m去除任意整数，可能得到的余数恰有0，1，…，m-1，这m个数，所以模m共有m个剩余类。</p>
+<p>3、从模m每个剩余类中任意取出一个数作为代表，得到m个数，比方r1, r2, …,rm，称这m个数作成一个<strong>完全剩余系</strong>。</p>
+<p>例1： 0，1，…，m-1便是这样一个完全剩余系，称为模m 的非负最小完全剩余系。<br>
+任意整数模m恰好合同于此完全剩余系中的一个数。<br>
+例2： 模3，三个数0，1，2作成一个完全剩余系，-1，0，1也作成一个完全剩余系。<br>
+例3： 模2，两个数0，1作成一个完全剩余系，0代表所有偶数，1代表所有奇数.</p>
+<p><strong>同余式</strong>：含有整数变量的合同式，称为<strong>合同方程</strong>或<strong>同余式</strong> 。</p>
+<p>ax<span class="math inline">\(\equiv\)</span>b(mod m)这种形式的合同式称为一次同余式；类似地，<span class="math inline">\(\mathrm{a}_2\mathrm{x}^2+\mathrm{a}_1\mathrm{x}\equiv \mathrm{b}\left( \mathrm{mod} \mathrm{m} \right)\)</span>称为二次同余式。</p>
+<p><strong>一次同余式解的个数</strong>：</p>
+<p>1、若a和m互质，b任意，则模m<strong>恰有一个</strong>数x使ax<span class="math inline">\(\equiv\)</span> b(mod m) 。</p>
+<p>推论：设p为质数。若a<span class="math inline">\(\not \equiv\)</span> 0 (mod p)，b任意，则模p恰有一个数x使ax<span class="math inline">\(\equiv\)</span> b(mod p)。</p>
+<p>2、若(a, m)=d&gt;1 ，且d|b，则同余式ax<span class="math inline">\(\equiv\)</span> b(mod m)有d个解</p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171035580-1345882650.jpg" width="500px">
+<p><strong>求解一次合同方程的方法 ：</strong></p>
+<p><strong>方法一</strong>：先使用辗转相除方法将互质的a与m的最大公因数1表示为a和m的倍数和的形式：1=as+mt，然后取x=sb，即可。</p>
+<p><font color="red">注意：<span class="math inline">\(\mathrm{s}=(-1)^k\mathrm{T}_{\mathrm{k}}\)</span></font></p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171052036-1324145798.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171056937-539064238.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171102173-1321461280.jpg" width="600px">
+<p><strong>方法二</strong> ：就是利用合同的性质，使x的系数变成1，即得到解。</p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171128907-1615275211.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171133959-162281584.jpg" width="600px">
+<p><strong>定理5.3.2</strong>：若(a, m)=d&gt;1，且d<span class="math inline">\(\nmid\)</span>b，则同余式ax<span class="math inline">\(\equiv\)</span> b (mod m)无解。</p>
+<p>本定理可以作为<strong>同余式无解的判定定理</strong>.</p>
+<p><strong>定理5.3.3</strong>：若(a, m)=d&gt;1 ，且d|b，则同余式ax<span class="math inline">\(\equiv\)</span>b(mod m)有d个解，分别为 <span class="math inline">\(\mathrm{\alpha}\)</span>, <span class="math inline">\(\mathrm{\alpha}\)</span>+m/d, <span class="math inline">\(\mathrm{\alpha}\)</span>+2m/d, …, <span class="math inline">\(\mathrm{\alpha}\)</span>+(d-1)m/d ……<br>
+其中<span class="math inline">\(\mathrm{\alpha}\)</span>是同余式(a/d)x<span class="math inline">\(\equiv\)</span>b/d (mod m/d)的解。</p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171204270-449715154.jpg" width="600px">
+<h1 id="秦九韶定理---euler函数">秦九韶定理  	Euler函数</h1>
+<h2 id="一次同余式组--秦九韶定理">一次同余式组  秦九韶定理</h2>
+<p><strong>定理5.4.1</strong>  设[m1,m2]为m1，m2的最低公倍数。则同余式组<br>
+x<span class="math inline">\(\equiv\)</span>a1 (mod m1)<br>
+x<span class="math inline">\(\equiv\)</span>a2 (mod m2) ……………..(1)<br>
+在mod[m1,m2]下有唯一解的充要条件为<br>
+(m1,m2)|(a1-a2) ……………………….(2)</p>
+<p>Note：当此定理中的(m1,m2)=1这种特殊情况时，则（1）有关于模m1m2唯一解。推广此特殊情形即得到中国剩余定理，也称为孙子定理。后经过秦九韶整理和解法的推广，我们这里称之为秦九韶定理。</p>
+<p><strong>秦九韶定理</strong> ：设m1, m2 , …, mk两两互质。a1, a2, …, ak为k个整数，则下列同余式组有解，且在模m1 m2 …mk下解唯一：</p>
+<p></p><div class="math display">\[\left. \begin{array}{r}
+	\mathrm{x}\equiv \mathrm{a}_1\left( \mathrm{mod} \quad\mathrm{m}_1 \right) ,\\
+	\mathrm{x}\equiv \mathrm{a}_2\left( \mathrm{mod} \quad\mathrm{m}_2 \right) ,\\
+	\mathrm{……} \mathrm{……} \mathrm{……},\\
+	\mathrm{x}\equiv \mathrm{a}_{\mathrm{k}}\left( \mathrm{mod} \quad\mathrm{m}_{\mathrm{k}} \right)\\
+\end{array} \right\} \left( 1 \right)
+\]</div><p></p><img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171511838-204709019.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171516974-619175944.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171521724-2132088279.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171525521-1511383207.jpg" width="600px">
+<p><strong>习题</strong>：</p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171530319-1818589124.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171537691-115965598.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171542028-1495053408.jpg" width="600px">
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171547290-2020478733.jpg" width="600px">
+<h2 id="euler函数">Euler函数</h2>
+<p><strong>结论</strong>：设n是任意正整数， A 为mod n的任意剩余类，a<span class="math inline">\(\in\)</span>A。若a和n互质，则A中任意数和n互质。</p>
+<p>若A中有一个数和n互质，则其中所有的数都和n互质。故A 中的数或者都和n互质，或者都和n不互质。</p>
+<p>**例. **    mod 6<br>
+2，8，16 ，…,与6都不互质。<br>
+5，11，17，…,与6都互质。</p>
+<p><strong>定义</strong>：设A 为mod n的一个剩余类，若对a<span class="math inline">\(\in\)</span>A，a与n互质，则称剩余类A与n互质。</p>
+<p><strong>Euler函数</strong> ：</p>
+<p><strong>定义</strong>： 和n互质的剩余类的个数称为Euler(欧拉)函数,记为<span class="math inline">\(\mathrm{\varphi}\)</span>(n)。<br>
+<strong>定义</strong> ：从和n互质的每一个剩余类中取出一个数，这样得到的<span class="math inline">\(\mathrm{\varphi}\)</span>(n)个数称之为作成mod n的一个简化剩余系。<br>
+显然，从mod n的一个非负最小完全剩余系中取出与n互质的那些数,就得到mod n的一个简化剩余系，因而<span class="math inline">\(\mathrm{\varphi}\)</span>(n)等于<span class="math inline">\(\leqslant\)</span>n的正数中和n互质的数的个数。</p>
+<p><strong>例</strong> n=10，则mod n的一个完全剩余系为0，1，…，9，一个简化剩余系为1，3，7，9，<span class="math inline">\(\mathrm{\varphi}\)</span>(10)=4。<br>
+例 n=12，则mod n的一个完全剩余系为0，1，…，11，一个简化剩余系为1，5，7，11，<span class="math inline">\(\mathrm{\varphi}\)</span>(12)=4。</p>
+<p><strong>定理5.4.5</strong> ：设m=m1…mk，而m1, …, mk两两互质。则<span class="math inline">\(\mathrm{\varphi}\)</span>(m)= <span class="math inline">\(\mathrm{\varphi}\)</span>(m1)<span class="math inline">\(\mathrm{\varphi}\)</span>(m2) …<span class="math inline">\(\mathrm{\varphi}\)</span>(mk)</p>
+<p>例. <span class="math inline">\(\mathrm{\varphi}\)</span>(2646)= <span class="math inline">\(\mathrm{\varphi}\)</span>(2×27×49)<br>
+= <span class="math inline">\(\mathrm{\varphi}\)</span>(2) ×<span class="math inline">\(\mathrm{\varphi}\)</span>(27)×<span class="math inline">\(\mathrm{\varphi}\)</span>(49)</p>
+<p><strong>定理5.4.6</strong> ：<span class="math inline">\(
+\text{设n}={\mathrm{p}_1}^{\mathrm{r}_1}{\mathrm{…p}_{\mathrm{k}}}^{\mathrm{r}_{\mathrm{k}}}\text{是n的质因数分解式，p}_1\mathrm{…p}_{\mathrm{k}}\text{都不相同，于是}
+\\
+\mathrm{\varphi}\left( \mathrm{n} \right) =\mathrm{n}\left( 1-\frac{1}{\mathrm{p}_1} \right) \mathrm{…}\left( 1-\frac{1}{\mathrm{p}_{\mathrm{k}}} \right)\)</span></p>
+<p><span class="math inline">\(\text{例} \mathrm{\varphi (}2646)=\mathrm{\varphi (}2×3^3×7^2)=2646×(1-1/2)(1-1/3)(1-1/7)=756\)</span></p>
+<p><strong>定理5.4.7</strong>(<strong>Fermat-Euler定理</strong>,Euler1760年提出)  ：若a和n互质，则<span class="math inline">\(\mathrm{a}^{\mathrm{\varphi}\left( \mathrm{n} \right)}\equiv 1\)</span>(mod n)</p>
+<p><span class="math inline">\(\text{例}：a=3,n=10,3与10互质,\mathrm{\varphi (}10)=4,则3^4\equiv 1(mod10)
+\\
+a=5,n=12,5与12互质,\mathrm{\varphi (}12)=4,则5^4\equiv 1(mod12)\)</span></p>
+<p><strong>推论1</strong>   (Fermat小定理Ⅰ)<br>
+若p是质数而p <span class="math inline">\(\nmid\)</span> a，则<span class="math inline">\(\mathrm{a}^{\mathrm{p}-1}\equiv 1\)</span>(mod p)。</p>
+<p><strong>推论2</strong>（Fermat小定理Ⅱ）<br>
+若p为质数，则对任意整数a,都有<span class="math inline">\(\mathrm{a}^{\mathrm{p}}\equiv a\)</span>(mod p)。</p>
+<p>例:p=3,  a=2, <span class="math inline">\(2^{3-1}\equiv 1\left( \mathrm{mod} 3 \right)\)</span>    <span class="math inline">\(2^{3}\equiv 2\left( \mathrm{mod} 3 \right)\)</span></p>
+<p><strong>例题</strong>：</p>
+<img src="https://img2020.cnblogs.com/blog/2288178/202106/2288178-20210624171239929-885567661.jpg" width="600px">
+<h1 id="第九次作业"><strong>第九次作业</strong></h1>
+<p>1、用辗转相除法求1046和2683的最高公因数并表示为它们的倍数和。</p>
+<p>2683/1046=2……591</p>
+<p>1046/591=1……455</p>
+<p>591/455=1……136</p>
+<p>455/136=3……47</p>
+<p>136/47=2……42</p>
+<p>47/42=1……5</p>
+<p>42/5=8……2</p>
+<p>5/2=2……1</p>
+<p>2/1=2……0</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center">k</th>
+<th style="text-align: center">0</th>
+<th style="text-align: center">1</th>
+<th style="text-align: center">2</th>
+<th style="text-align: center">3</th>
+<th style="text-align: center">4</th>
+<th style="text-align: center">5</th>
+<th style="text-align: center">6</th>
+<th style="text-align: center">7</th>
+<th style="text-align: center">8</th>
+<th style="text-align: center">9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center"><span class="math inline">\(\mathrm{r}_{\mathrm{k}}\)</span></td>
+<td style="text-align: center"></td>
+<td style="text-align: center">591</td>
+<td style="text-align: center">455</td>
+<td style="text-align: center">136</td>
+<td style="text-align: center">47</td>
+<td style="text-align: center">42</td>
+<td style="text-align: center">5</td>
+<td style="text-align: center">2</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">0</td>
+</tr>
+<tr>
+<td style="text-align: center"><span class="math inline">\(\mathrm{q}_{\mathrm{k}}\)</span></td>
+<td style="text-align: center"></td>
+<td style="text-align: center">2</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">3</td>
+<td style="text-align: center">2</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">8</td>
+<td style="text-align: center">2</td>
+<td style="text-align: center">2</td>
+</tr>
+<tr>
+<td style="text-align: center"><span class="math inline">\(\mathrm{S}_{\mathrm{k}}\)</span></td>
+<td style="text-align: center">0</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">2</td>
+<td style="text-align: center">7</td>
+<td style="text-align: center">16</td>
+<td style="text-align: center">23</td>
+<td style="text-align: center">200</td>
+<td style="text-align: center">423</td>
+<td style="text-align: center"></td>
+</tr>
+<tr>
+<td style="text-align: center"><span class="math inline">\(\mathrm{T}_{\mathrm{k}}\)</span></td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">2</td>
+<td style="text-align: center">3</td>
+<td style="text-align: center">5</td>
+<td style="text-align: center">18</td>
+<td style="text-align: center">41</td>
+<td style="text-align: center">59</td>
+<td style="text-align: center">513</td>
+<td style="text-align: center">1085</td>
+<td style="text-align: center"></td>
+</tr>
+</tbody>
+</table>
+<p>最高公因数：<span class="math inline">\(1=\left( -1 \right) ^{8-1}\times 423\times 2683+\left( -1 \right) ^8\times 1085\times 1046\)</span>  <font color="red">（注意n是最后一个非零余项的n）</font></p>
+<p>公式：</p>
+<p></p><div class="math display">\[\mathrm{S}_0=0,\mathrm{S}_1=1,\mathrm{T}_0=1,\mathrm{T}_1=\mathrm{q}_1\\\mathrm{S}_{\mathrm{k}}=\mathrm{q}_{\mathrm{k}}\mathrm{S}_{\mathrm{k}-1}+\mathrm{S}_{\mathrm{k}-2}\\\mathrm{T}_{\mathrm{k}}=\mathrm{q}_{\mathrm{k}}\mathrm{T}_{\mathrm{k}-1}+\mathrm{T}_{\mathrm{k}-2}\\\mathrm{d}=\left( -1 \right) ^{\mathrm{n}-1}\mathrm{S}_{\mathrm{n}}\mathrm{a}+\left( -1 \right) ^{\mathrm{n}}\mathrm{T}_{\mathrm{n}}\mathrm{b}
+\]</div><p></p><p>2、判断题：0和1 是互质的。（对）</p>
+<p>【解】±1和任意整数(包括0)互质。</p>
+<p>3、判断题：0和100的最高公因数是±100。（ 对 ）</p>
+<h1 id="第十次作业">第十次作业</h1>
+<p>判定同余式206x<span class="math inline">\(\equiv\)</span> 114(mod 422)是否有解，如果存在请给出解。</p>
+<p>【解】(206,114)=2且2|114故有两个解</p>
+<p>​	<strong>法一</strong>：</p>
+<p>​	先求103<span class="math inline">\(\equiv\)</span> 57(mod 211)的解</p>
+<p>​	211=103*2+5</p>
+<p>​	故206x<span class="math inline">\(\equiv\)</span> 114(mod 211) 又因为211x<span class="math inline">\(\equiv\)</span> 0(mod 211)</p>
+<p>​	5x<span class="math inline">\(\equiv\)</span> -114(mod 211)</p>
+<p>​	5x<span class="math inline">\(\equiv\)</span> 97(mod 211)</p>
+<p>​	因为211=42*5+1</p>
+<p>​	故210x<span class="math inline">\(\equiv\)</span> 12936(mod 211)</p>
+<p>​	211x<span class="math inline">\(\equiv\)</span> 0(mod 211)</p>
+<p>​	x<span class="math inline">\(\equiv\)</span> -12936(mod 211)</p>
+<p>​	x<span class="math inline">\(\equiv\)</span> 146(mod 211)</p>
+<p>​	故x<span class="math inline">\(\equiv\)</span> 146(mod 422)   x<span class="math inline">\(\equiv\)</span> 357(mod 422)</p>
+<p>​	<strong>法二</strong>：</p>
+<p>​	先求103$\equiv$57(mod 211)的解</p>
+<p>​	211=103*2+5</p>
+<p>​	103=20*5+3</p>
+<p>​	5=3*1+2</p>
+<p>​	3=2*1+1</p>
+<p>​	2=1*2+0</p>
+<table>
+<thead>
+<tr>
+<th>k</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(\mathrm{r}_{\mathrm{k}}\)</span></td>
+<td></td>
+<td>5</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\mathrm{q}_{\mathrm{k}}\)</span></td>
+<td></td>
+<td>2</td>
+<td>20</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\mathrm{S}_{\mathrm{k}}\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>20</td>
+<td>21</td>
+<td>41</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="math inline">\(\mathrm{T}_{\mathrm{k}}\)</span></td>
+<td>1</td>
+<td>2</td>
+<td>41</td>
+<td>43</td>
+<td>84</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>最高公因式：<span class="math inline">\(1=\left( -1 \right) ^3\times 41\times 211+\left( -1 \right) ^4\times 84\times 103\)</span></p>
+<p>由此知：<span class="math inline">\(\mathrm{S}=\left( -1 \right) ^4\times 84=84\)</span></p>
+<p>​				<span class="math inline">\(x=Sb=84\times57=4788=211\times 23-65\equiv -65\left( \mathrm{mod } 211 \right) \equiv 146\left( \mathrm{mod } 211 \right)\)</span></p>
+<p>归正以后得x<span class="math inline">\(\equiv\)</span> 146(mod 422)   x<span class="math inline">\(\equiv\)</span> 357(mod 422)</p>
+<h1 id="往期回顾"><strong>往期回顾</strong></h1>
+<p><a href="https://www.cnblogs.com/gonghr/p/14896893.html" title="离散数学（集合论）" target="_blank">离散数学（集合论）</a><br>
+<a href="https://www.cnblogs.com/gonghr/p/14897028.html" title="离散数学（古典数理逻辑）" target="_blank">离散数学（古典数理逻辑）</a><br>
+<a href="https://www.cnblogs.com/gonghr/p/14897119.html" title="离散数学（图与网络）" target="_blank">离散数学（图与网络）</a><br>
+<a href="https://www.cnblogs.com/gonghr/p/14927783.html" title="离散数学（数论基础）" target="_blank">离散数学（数论基础）</a><br>
+<a href="https://www.cnblogs.com/gonghr/p/15474256.html" title="离散数学（格与布尔代数）" target="_blank">离散数学（格与布尔代数）</a><br>
+<a href="https://www.cnblogs.com/gonghr/p/15234188.html" title="离散数学（群、环、域）" target="_blank">离散数学（群、环、域）</a></p>
+</font>
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2021-06-24 17:18</span>&nbsp;
+<a href="https://www.cnblogs.com/gonghr/">gonghr</a>&nbsp;
+阅读(<span id="post_view_count">701</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14927783" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(14927783);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: '', targetType: 'blogPost', targetId: '14927783', targetLink: 'https://www.cnblogs.com/gonghr/p/14927783.html', title: '离散数学（数论基础）' })">举报</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+
+<script>
+    var allowComments = true, cb_blogId = 663829, cb_blogApp = 'gonghr', cb_blogUserGuid = '9fbd2323-83b2-4cd3-f778-08d8bdc87a18';
+    var cb_entryId = 14927783, cb_entryCreatedDate = '2021-06-24 17:18', cb_postType = 1;
+    updatePostStats(
+        [cb_entryId],
+        function(id, count) { $("#post_view_count").text(count) },
+        function(id, count) { $("#post_comment_count").text(count) })
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+    markdown_highlight()
+</script>
+
+<a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="cnblogs_ch"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+            <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_card1"></div>
+    <div id="cnblogs_c2" class="under-post-card">
+        <div id='div-gpt-ad-1592366332455-0' style='width: 468px; height: 60px;'></div>
+    </div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+       var commentManager = new blogCommentManager();
+       commentManager.renderComments(0);
+       fixPostBody();
+
+           window.tocManager.displayDisableTocTips = false
+           window.tocManager.generateToc();
+           setTimeout(function() { incrementViewCount(cb_entryId); }, 50);       deliverT2();
+       deliverC1C2();
+       loadNewsAndKb();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+       GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+       loadOptUnderPost();
+       GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2021 gonghr
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script src="https://guangzan.gitee.io/awescnb/index.js"></script>
+<script>
+  const opts = {
+    theme: {
+      name: 'geek',
+      avatar: 'https://pic.cnblogs.com/avatar/2288178/20210306160404.png',
+      headerBackground: 'https://tse1-mm.cn.bing.net/th/id/R-C.cf0854d7a9351da46f40d5386883b34d?rik=w99HHsYrR%2bNDBw&riu=http%3a%2f%2fwww.51pptmoban.com%2fd%2ffile%2f2015%2f07%2f04%2f2b11e7be2434784253a27e92fc94b50a.jpg&ehk=zd9%2fMX1OjCG0dnuAd%2bNXZvFXoEvYDsErRnZw35Z%2f%2ftc%3d&risl=&pid=ImgRaw&r=0',
+    },
+    signature: {
+        enable: true,
+        contents: [
+            "<b>每个不曾起舞的日子</b>",
+            "<b>都是对生命的辜负</b>",
+        ],
+    },
+    catalog: {
+    enable: true,
+    position: 'left',
+    },
+    highLight: {
+    dark: 'atomOneLight',
+    light: 'atomOneLight',
+},
+click: {
+    enable: true,
+    auto: false,
+    colors: ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'],
+    size: 30,
+    maxCount: 50,
+},
+topProgress: {
+    enable: true,
+    page: 'all',
+    agent: 'pc',
+    background: '#FFB3CC',
+    height: '5px',
+},
+
+lineNumbers: {
+    enable: false,
+},
+  }
+  $.awesCnb(opts)
+</script>
+    </div>
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8FO3GXnjClZGrNGr2Ic8Z1r7w2GTmZaFTKOn2XrYR0-Nxsr2zlJ8R6t3huOLxlUYngsbW8HbAuICX2u7Puw1HR-BQt9aF_YSyZuqkwBGGGg2qQQZL2Do34D5byQB-3S00D36BAZvdIyruPr1qcIFm5o" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var kv = getGACustom();
+    if (kv) {
+        gtag('set', kv);
+    }
+    gtag('config', 'UA-476124-1');
+    </script>
+    <script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>
