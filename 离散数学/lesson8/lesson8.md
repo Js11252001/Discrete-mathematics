@@ -14,7 +14,11 @@
 
 ## Arithmetic Modulo m
 ![](2021-11-19-19-39-41.png)
+
+
 注意的是这里的Zm这个集合是小于m的数
+
+
 ![](2021-11-19-20-17-00.png)
 
 ## Integer Representations
