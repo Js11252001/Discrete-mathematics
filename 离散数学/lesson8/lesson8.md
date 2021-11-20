@@ -10,6 +10,8 @@
 
 ## Computing the mod m Function of Products and Sums
 ![](2021-11-19-19-28-36.png)
+
+
 看情况将右边的化为左边或者将左边化为右边
 
 ## Arithmetic Modulo m
